@@ -20,6 +20,10 @@ public class Inscricoes {
     @JoinColumn(name = "evento_id")
     private Evento evento;
 
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
+
     public Inscricoes() {
     }
 
@@ -53,5 +57,13 @@ public class Inscricoes {
 
     public void setEvento(Evento evento) {
         this.evento = evento;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 }

@@ -17,11 +17,12 @@ public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String endereco;
     private String telefone;
     private String email;
 
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Inscricoes> cursosTutelando;
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    private List<Evento> eventos;
 }

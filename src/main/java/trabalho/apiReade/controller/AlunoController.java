@@ -10,48 +10,62 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/aluno")
+@RequestMapping("/alunos")
+@CrossOrigin("*")
 public class AlunoController {
 
     @Autowired
-    private AlunoRepository alunoRepository;
-
-    @PostMapping
-    public Aluno criarAluno(@RequestBody Aluno aluno) {
-        return alunoRepository.save(aluno);
-    }
+    private AlunoRepository repository;
 
     @GetMapping
-    public List<Aluno> listarAlunos() {
-        return alunoRepository.findAll();
+    public List<Aluno> listar() {
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Aluno> buscarPorId(@PathVariable Long id) {
-        Optional<Aluno> aluno = alunoRepository.findById(id);
-        return aluno.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+
+        Optional<Aluno> aluno = repository.findById(id);
+
+        return aluno.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping
+    public Aluno salvar(@RequestBody Aluno aluno) {
+        return repository.save(aluno);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Aluno> atualizarAluno(@PathVariable Long id, @RequestBody Aluno dadosAtualizados) {
-        return alunoRepository.findById(id)
+    public ResponseEntity<Aluno> atualizar(
+            @PathVariable Long id,
+            @RequestBody Aluno dadosAtualizados
+    ) {
+
+        return repository.findById(id)
                 .map(aluno -> {
+
                     aluno.setNome(dadosAtualizados.getNome());
-                    aluno.setEndereco(dadosAtualizados.getEndereco());
-                    aluno.setTelefone(dadosAtualizados.getTelefone());
                     aluno.setEmail(dadosAtualizados.getEmail());
-                    aluno.setCursosInscritos(dadosAtualizados.getCursosInscritos());
-                    return ResponseEntity.ok(alunoRepository.save(aluno));
+                    aluno.setTelefone(dadosAtualizados.getTelefone());
+                    aluno.setEndereco(dadosAtualizados.getEndereco());
+
+                    Aluno atualizado = repository.save(aluno);
+
+                    return ResponseEntity.ok(atualizado);
                 })
-                .orElseGet(() -> ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarAluno(@PathVariable Long id) {
-        if (alunoRepository.existsById(id)) {
-            alunoRepository.deleteById(id);
-            return ResponseEntity.noContent().build();
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+
+        if (!repository.existsById(id)) {
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
+
+        repository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
     }
 }
