@@ -1,0 +1,165 @@
+<!-- DOCUMENTO HTML -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- CABEÇALHO DO DOCUMENTO -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>site de eventos</title>
+    <link rel="icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <script defer src="/js/app.js"></script>
+
+</head>
+
+<!-- CORPO DA PÁGINA -->
+<body>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<header class="header">
+    <nav class="nav">
+        <a href="#" class="logo"><img src="/img/logo png1.png" alt="Logo da empresa"></a>
+        <button class="hamburger"></button>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <ul class="nav-list">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/admin/atendimento">Adm Atendimento</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/atendimento">Atendimento</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- SEÇÃO DO SLIDER -->
+<section class="slider">
+    <div class="slider-content">
+
+        <!-- BOTÕES DE CONTROLE DO SLIDER -->
+        <input type="radio" name="btn-radio" id="radio1">
+        <input type="radio" name="btn-radio" id="radio2">
+        <input type="radio" name="btn-radio" id="radio3">
+
+        <!-- SLIDE 1 -->
+        <div class="slide-box primeiro">
+            <img class="img-desktop" src="/img/Gemini1 (1).png" alt="slide 1">
+            <img class="img-mobile" src="/img/Gemini1 (2).png" alt="slide 1">
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide-box">
+            <img class="img-desktop" src="/img/Gemini0 (1).png" alt="slide 2">
+            <img class="img-mobile" src="/img/Gemini0 (2).png" alt="slide 2">
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide-box">
+            <img class="img-desktop" src="/img/Gemini2 (1).png" alt="slide 3">
+            <img class="img-mobile" src="/img/Gemini2 (2).png" alt="slide 3">
+        </div>
+
+        <!-- NAVEGAÇÃO AUTOMÁTICA DO SLIDER -->
+        <div class="nav-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+        </div>
+
+        <!-- NAVEGAÇÃO MANUAL DO SLIDER -->
+        <div class="nav-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+
+    </div>
+</section>
+
+<!-- SEÇÃO DE EVENTOS -->
+
+<section class="eventos-visuais">
+    <div class="eventos-titulo">
+        <h2>Próximos Eventos</h2>
+        <p>Confira alguns eventos escolares em destaque</p>
+    </div>
+
+    <!-- LISTA DE EVENTOS -->
+    <div class="eventos-container">
+
+        <!-- CARD DO EVENTO -->
+        <div class="evento-card">
+            <img src="/img/Feira de Ciências (1).png" alt="Feira de Ciências">
+            <h3>Feira de Ciências</h3>
+        </div>
+
+        <!-- CARD DO EVENTO -->
+        <div class="evento-card">
+            <img src="/img/Gincana Escolar (1).png" alt="Gincana Escolar">
+            <h3>Gincana Escolar</h3>
+        </div>
+
+        <!-- CARD DO EVENTO -->
+        <div class="evento-card">
+            <img src="/img/Mostra Cultural (1).png" alt="Mostra Cultural">
+            <h3>Mostra Cultural</h3>
+        </div>
+
+        <!-- CARD DO EVENTO -->
+        <div class="evento-card">
+            <img src="/img/Palestra de Tecnologia (1).png" alt="Palestra de Tecnologia">
+            <h3>Palestra de Tecnologia</h3>
+        </div>
+
+    </div>
+</section>
+
+<!--Começo-da-seção-sobre-->
+
+<!-- SEÇÃO SOBRE -->
+<section class="sobre" id="sobre">
+
+    <section class="background-color-Sobre">
+        <div class="main-sobre">
+            <img src="/img/divugação de eventos escolares (1).png">
+
+            <!-- TEXTO DA SEÇÃO SOBRE -->
+            <div class="Text-sobre">
+                <h2>Sobre o Portal</h2>
+                <h5>Nossa Missão</h5>
+                <p>Este portal foi desenvolvido para facilitar a divulgação e o acompanhamento dos eventos escolares. Aqui, alunos, professores e responsáveis podem encontrar informações sobre feiras, gincanas, palestras, apresentações culturais, competições e outras atividades promovidas pela instituição.</p>
+                <a href="#"><button class="botão" type="button">Eventos</button><!--Button--></a>
+
+            </div><!--Text-sobre-->
+        </div><!--main-sobre-->
+    </section><!--background-color-Sobre-->
+</section>
+
+
+
+<!-- SEÇÃO DE CONTATO -->
+<section class="contato" id="contato">
+    <!--Rodapé--->
+    <footer>
+        <h5 class="vamo">Portal de Eventos Escolares</h5>
+        <p class="vamo">Fique por dentro das feiras, gincanas, palestras, apresentações culturais e demais eventos promovidos pela escola. Confira a programação e participe das atividades.</p>
+
+        <!-- REDES SOCIAIS -->
+        <ul class="Redes-sociais">
+            <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path stroke-dasharray="24" stroke-dashoffset="24" d="M17 4l-2 0c-2.5 0 -4 1.5 -4 4v12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="24;0"/></path><path stroke-dasharray="8" stroke-dashoffset="8" d="M8 12h7"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="8;0"/></path></g></svg></a></li>
+            <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 24 24"><circle cx="17" cy="7" r="1.5" fill="#fff" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="1.3s" dur="0.15s" values="0;1"/></circle><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="72" stroke-dashoffset="72" d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76 -2.24 5 -5 5h-8c-2.76 0 -5 -2.24 -5 -5v-8c0 -2.76 2.24 -5 5 -5h4Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="72;0"/></path><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 8c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.6s" values="28;0"/></path></g></svg></a></li>
+            <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 8.505c-1.577-5.867-7-5.5-7-5.5s-7.5-.5-7.5 8.995s7.5 8.996 7.5 8.996s4.458.296 6.5-3.918c.667-1.858.5-5.573-6-5.573c0 0-3 0-3 2.5c0 .976 1 2 2.5 2s3.171-1.027 3.5-3c1-6-4.5-6.5-6-4" color="#fff"/></svg></a></li>
+            <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 24 24"><g fill="#fff"><path d="M1 2h2.5L3.5 2h-2.5zM5.5 2h2.5L7.2 2h-2.5z"><animate fill="freeze" attributeName="d" dur="0.4s" values="M1 2h2.5L3.5 2h-2.5zM5.5 2h2.5L7.2 2h-2.5z;M1 2h2.5L18.5 22h-2.5zM5.5 2h2.5L23 22h-2.5z"/></path><path d="M3 2h5v0h-5zM16 22h5v0h-5z"><animate fill="freeze" attributeName="d" begin="0.4s" dur="0.4s" values="M3 2h5v0h-5zM16 22h5v0h-5z;M3 2h5v2h-5zM16 22h5v-2h-5z"/></path><path d="M18.5 2h3.5L22 2h-3.5z"><animate fill="freeze" attributeName="d" begin="0.5s" dur="0.4s" values="M18.5 2h3.5L22 2h-3.5z;M18.5 2h3.5L5 22h-3.5z"/></path></g></svg></a></li>
+        </ul><!--Redes-sociais-->
+        <p class="end">Copyright © 2026 Todos os direitos reservados</p>
+    </footer>
+</section>
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+<a id="topo" href=""><svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="20" stroke-dashoffset="20" d="M12 21l0 -17.5"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="20;0"/></path><path stroke-dasharray="12" stroke-dashoffset="12" d="M12 3l7 7M12 3l-7 7"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" values="12;0"/></path></g></svg> </a>
+
+</body>
+</html>

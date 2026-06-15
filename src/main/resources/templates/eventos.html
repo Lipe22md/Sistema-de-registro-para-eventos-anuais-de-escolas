@@ -1,0 +1,92 @@
+<!-- DOCUMENTO HTML -->
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<!-- CABEÇALHO DO DOCUMENTO -->
+<head>
+    <link rel="stylesheet" href="/css/css.css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<!-- CORPO DA PÁGINA -->
+<body>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<header>
+    <h1>Lista de Eventos</h1>
+
+    <!-- CONTADOR DE EVENTOS -->
+    <p id="contador" th:text="'Total de eventos: ' + ${#lists.size(eventos)}">
+        Total de eventos: 8
+    </p>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <a href="/eventos">Eventos</a>
+
+        <!-- FORMULÁRIO DE LOGOUT -->
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <button type="submit" class="btn-sair">Sair</button>
+        </form>
+    </nav>
+</header>
+
+<!-- SEÇÃO DE EVENTOS -->
+<main class="lista-eventos">
+
+    <!-- CARD DE EVENTO -->
+    <article class="card-evento" th:each="evento : ${eventos}">
+
+        <!-- IMAGEM DO EVENTO -->
+        <div th:switch="${evento.titulo}">
+            <img th:case="'Feira de Ciências'" src="/img/Feira de ciências.png" alt="Feira de Ciências">
+            <img th:case="'Semana da Tecnologia'" src="/img/Semana da tecnologia.png" alt="Semana da Tecnologia">
+            <img th:case="'Olimpíada de Matemática'" src="/img/Olimpíada de matemática.png" alt="Olimpíada de Matemática">
+            <img th:case="'Conscientização de Saúde Mental'" src="/img/Saúde mental.png" alt="Conscientização de Saúde Mental">
+            <img th:case="'Tour de Astronomia'" src="/img/Tour de astronomia.png" alt="Tour de Astronomia">
+            <img th:case="'Show de Física'" src="/img/Show de física.png" alt="Show de Física">
+            <img th:case="'Stands de Idiomas'" src="/img/Stands de idiomas.png" alt="Stands de Idiomas">
+            <img th:case="'Introdução ao Mercado de Trabalho'" src="/img/Introdução ao mercado de trabalho.png" alt="Introdução ao Mercado de Trabalho">
+            <img th:case="*" src="/img/logo1-removebg-preview.png" alt="Evento">
+        </div>
+
+        <!-- CONTEÚDO DO EVENTO -->
+        <div class="conteudo">
+
+            <!-- TÍTULO DO EVENTO -->
+            <h2 th:text="${evento.titulo}">Nome do Evento</h2>
+
+            <!-- DESCRIÇÃO DO EVENTO -->
+            <p th:text="${evento.descricao}">
+                Descrição do evento.
+            </p>
+
+            <!-- DATA DO EVENTO -->
+            <p class="data-evento">
+                📅 Data:
+                <span th:text="${#temporals.format(evento.dataHora, 'dd/MM/yyyy')}">
+                    25/09/2027
+                </span>
+            </p>
+
+            <!-- FORMULÁRIO DE INSCRIÇÃO -->
+            <form th:action="@{'/eventos/' + ${evento.id} + '/inscrever'}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <button type="submit" class="btn-inscricao">
+                    Inscrever-se
+                </button>
+            </form>
+
+        </div>
+
+    </article>
+
+</main>
+
+</body>
+
+</html>

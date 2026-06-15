@@ -1,0 +1,97 @@
+<!-- DOCUMENTO HTML -->
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<!-- CABEÇALHO DO DOCUMENTO -->
+<head>
+    <link rel="stylesheet" href="/css/index6.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <link rel="icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Inscrições</title>
+
+
+</head>
+
+<!-- CORPO DA PÁGINA -->
+<body>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<header>
+    <h1>Minhas Inscrições</h1>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <a href="/">Início</a>
+        <a href="/eventos">Eventos</a>
+        <a href="/atendimento">Atendimento</a>
+
+        <!-- FORMULÁRIO DE LOGOUT -->
+        <form th:action="@{/logout}" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <button type="submit" class="btn-sair">Sair</button>
+        </form>
+    </nav>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="container">
+
+    <!-- ALERTAS DE SUCESSO E ERRO -->
+    <div th:if="${sucesso}" class="alerta-sucesso" th:text="${sucesso}"></div>
+    <div th:if="${erro}" class="alerta-erro" th:text="${erro}"></div>
+
+    <!-- MENSAGEM QUANDO NÃO EXISTEM INSCRIÇÕES -->
+    <div class="vazio" th:if="${#lists.isEmpty(inscricoes)}">
+        Você ainda não possui inscrições em eventos.
+    </div>
+
+    <!-- CARD DE INSCRIÇÃO -->
+    <section class="card" th:each="inscricao : ${inscricoes}">
+
+        <!-- STATUS DA INSCRIÇÃO -->
+        <span class="status" th:text="${inscricao.status}">ATIVA</span>
+
+        <!-- TÍTULO DO EVENTO -->
+        <h2 th:text="${inscricao.evento.titulo}">Nome do Evento</h2>
+
+        <!-- DESCRIÇÃO DO EVENTO -->
+        <p>
+            <strong>Descrição:</strong>
+            <span th:text="${inscricao.evento.descricao}">Descrição do evento</span>
+        </p>
+
+        <!-- LOCAL DO EVENTO -->
+        <p>
+            <strong>Local:</strong>
+            <span th:text="${inscricao.evento.local}">Local do evento</span>
+        </p>
+
+        <!-- DATA DA INSCRIÇÃO -->
+        <p>
+            <strong>Data da inscrição:</strong>
+            <span th:text="${#temporals.format(inscricao.dataInscricao, 'dd/MM/yyyy HH:mm')}">
+                14/06/2026 20:00
+            </span>
+        </p>
+
+        <!-- FORMULÁRIO PARA CANCELAR INSCRIÇÃO -->
+        <form th:if="${inscricao.status.name() == 'ATIVA'}"
+              th:action="@{'/inscricoes/' + ${inscricao.id} + '/cancelar'}"
+              method="post">
+
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <button type="submit" class="btn-cancelar">
+                Cancelar inscrição
+            </button>
+        </form>
+
+    </section>
+
+</main>
+
+</body>
+
+</html>

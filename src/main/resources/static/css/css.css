@@ -1,0 +1,427 @@
+/* RESET GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BOTÃO SAIR */
+
+.btn-sair {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* EFEITO DO BOTÃO SAIR AO PASSAR O MOUSE */
+
+.btn-sair:hover {
+    background: white;
+    color: rgb(0, 102, 255);
+}
+
+/* CORPO DA PÁGINA */
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* CONTAINER CENTRAL */
+
+.container{
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORMULÁRIOS */
+
+.formulario{
+    background-color: white;
+
+    width: 350px;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* TÍTULO DO FORMULÁRIO */
+
+.formulario h1{
+    text-align: center;
+}
+
+/* TEXTO DOS CAMPOS DO FORMULÁRIO */
+
+.formulario label{
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* CAMPOS DE ENTRADA DO FORMULÁRIO */
+
+.formulario input{
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+}
+
+/* EFEITO DO CAMPO QUANDO CLICADO */
+
+.formulario input:focus{
+    outline: none;
+
+    border-color: rgb(0, 102, 255);
+
+    box-shadow: 0 0 5px rgba(21,101,192,0.3);
+}
+
+/* BOTÃO DO FORMULÁRIO */
+
+.formulario button{
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: rgb(0, 102, 255);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* EFEITO DO BOTÃO DO FORMULÁRIO AO PASSAR O MOUSE */
+
+.formulario button:hover{
+    background-color: rgb(0, 102, 255);
+}
+
+/* PARÁGRAFO DO FORMULÁRIO */
+
+.formulario p{
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #666;
+
+    margin-top: 10px;
+}
+
+/* LINK DENTRO DO FORMULÁRIO */
+
+.formulario p a{
+    color: rgb(0, 102, 255);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+/* EFEITO DO LINK DO FORMULÁRIO AO PASSAR O MOUSE */
+
+.formulario p a:hover{
+    color: rgb(0, 102, 255);
+
+    text-decoration: underline;
+}
+
+/* CABEÇALHO */
+
+header{
+    background-color: rgb(0, 102, 255);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* MENU DE NAVEGAÇÃO */
+
+nav{
+    display: flex;
+
+    gap: 10px;
+}
+
+/* LINKS DO MENU */
+
+nav a{
+    text-decoration: none;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border: 1px solid white;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+/* EFEITO DOS LINKS DO MENU AO PASSAR O MOUSE */
+
+nav a:hover{
+    background-color: white;
+
+    color: rgb(0, 102, 255);
+}
+
+/* LISTA DE EVENTOS */
+
+.lista-eventos{
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 20px;
+}
+
+/* CARD DE EVENTOS */
+
+.card-evento{
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.3s;
+}
+
+/* EFEITO DO CARD DE EVENTO AO PASSAR O MOUSE */
+
+.card-evento:hover{
+    transform: translateY(-5px);
+}
+
+/* IMAGEM DO CARD DE EVENTO */
+
+.card-evento img{
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+}
+
+/* CONTEÚDO DO CARD */
+
+.conteudo{
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex-grow: 1;
+}
+
+/* TEXTO DO CONTEÚDO DO CARD */
+
+.conteudo p{
+    margin: 15px 0;
+}
+
+/* BOTÃO DO CARD */
+
+.conteudo button{
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #2e7d32;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* EFEITO DO BOTÃO DO CARD AO PASSAR O MOUSE */
+
+.conteudo button:hover{
+    background-color: #1b5e20;
+}
+
+/* DATA DO EVENTO */
+
+.data-evento{
+    color: rgb(0, 102, 255);
+
+    font-weight: bold;
+}
+
+/* INFORMAÇÕES DO EVENTO */
+
+.info-evento{
+    background-color: #f5f5f5;
+
+    padding: 15px;
+
+    border-left: 5px solid rgb(0, 102, 255);
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+/* TÍTULO DAS INFORMAÇÕES DO EVENTO */
+
+.info-evento h2{
+    color: rgb(0, 102, 255);
+
+    margin-bottom: 10px;
+}
+
+/* CAIXA DE CONFIRMAÇÃO */
+
+.confirmacao{
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+
+    text-align: center;
+
+    max-width: 500px;
+
+    width: 100%;
+}
+
+/* TÍTULO DA CONFIRMAÇÃO */
+
+.confirmacao h1{
+    color: #2e7d32;
+
+    margin-bottom: 15px;
+}
+
+/* TEXTO DA CONFIRMAÇÃO */
+
+.confirmacao p{
+    margin: 12px 0;
+}
+
+/* LINHA DE SEPARAÇÃO DA CONFIRMAÇÃO */
+
+.confirmacao hr{
+    margin: 20px 0;
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+}
+
+/* BOTÃO VOLTAR */
+
+.btn-voltar{
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    background-color: rgb(0, 102, 255);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+/* EFEITO DO BOTÃO VOLTAR AO PASSAR O MOUSE */
+
+.btn-voltar:hover{
+    background-color: rgb(0, 102, 255);
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 768px){
+
+    /* FORMULÁRIO EM TELAS MENORES */
+
+    .formulario{
+        width: 90%;
+    }
+
+    /* LISTA DE EVENTOS EM TELAS MENORES */
+
+    .lista-eventos{
+        grid-template-columns: 1fr;
+    }
+
+    /* CABEÇALHO EM TELAS MENORES */
+
+    header{
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    /* MENU EM TELAS MENORES */
+
+    nav{
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}

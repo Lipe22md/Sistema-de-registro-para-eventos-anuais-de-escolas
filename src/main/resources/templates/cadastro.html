@@ -1,0 +1,105 @@
+<!-- DOCUMENTO HTML -->
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<!-- CABEÇALHO DO DOCUMENTO -->
+<head>
+    <link rel="stylesheet" href="/css/css.css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+
+
+
+</head>
+
+<!-- CORPO DA PÁGINA -->
+<body>
+
+<!-- CONTAINER DO FORMULÁRIO -->
+<div class="container">
+
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <form class="formulario" th:action="@{/cadastro}" method="post" th:object="${usuario}">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+        <!-- TÍTULO DO FORMULÁRIO -->
+        <h1>Cadastro</h1>
+
+        <!-- CAMPO NOME COMPLETO -->
+        <label for="nome">
+            Nome Completo
+        </label>
+
+        <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome completo"
+                required>
+
+        <!-- CAMPO EMAIL -->
+        <label for="email">
+            Email
+        </label>
+
+        <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu email"
+                required>
+
+        <!-- CAMPO TELEFONE -->
+        <label for="telefone">
+            Telefone
+        </label>
+
+        <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(00) 00000-0000"
+                required>
+
+        <!-- CAMPO SENHA -->
+        <label for="senha">
+            Senha
+        </label>
+
+        <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Crie uma senha"
+                required>
+
+        <!-- BOTÃO DE CADASTRO -->
+        <button type="submit">
+            Cadastrar
+        </button>
+
+        <!-- LINK PARA LOGIN -->
+        <p class="link-formulario">
+
+            Já possui uma conta?
+
+            <a href="/login">
+                Fazer login
+            </a>
+
+        </p>
+
+    </form>
+
+</div>
+
+
+
+
+</body>
+
+</html>

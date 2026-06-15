@@ -1,0 +1,143 @@
+/* CORPO DA PÁGINA */
+body {
+    background-color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: rgb(0, 102, 255);
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* TÍTULO DO CABEÇALHO */
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* LINKS DO MENU */
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* FORMULÁRIO DO MENU */
+nav form {
+    margin: 0;
+}
+
+/* BOTÃO SAIR */
+.btn-sair {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* EFEITO DO BOTÃO SAIR E LINKS AO PASSAR O MOUSE */
+.btn-sair:hover,
+nav a:hover {
+    color: white;
+    text-shadow: none;
+    background: transparent;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ALERTA DE SUCESSO */
+.alerta-sucesso {
+    background-color: #dcfce7;
+    border: 1px solid #22c55e;
+    color: #166534;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* ALERTA DE ERRO */
+.alerta-erro {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+    background-color: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* TÍTULO DO CARD */
+.card h2 {
+    color: rgb(0, 102, 255);
+    margin-bottom: 10px;
+}
+
+/* STATUS */
+.status {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* BOTÃO CANCELAR */
+.btn-cancelar {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* EFEITO DO BOTÃO CANCELAR AO PASSAR O MOUSE */
+.btn-cancelar:hover {
+    background-color: #991b1b;
+}
+
+/* MENSAGEM QUANDO ESTÁ VAZIO */
+.vazio {
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    color: #64748b;
+}

@@ -1,0 +1,92 @@
+<!-- DOCUMENTO HTML -->
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<!-- CABEÇALHO DO DOCUMENTO -->
+<head>
+    <link rel="stylesheet" href="/css/index4.css">
+    <link rel="icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Atendimento</title>
+
+</head>
+
+<!-- CORPO DA PÁGINA -->
+<body>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<header>
+    <h1>Painel do Administrador</h1>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <a href="/">Início</a>
+        <a href="/eventos">Eventos</a>
+
+        <!-- FORMULÁRIO DE LOGOUT -->
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <button type="submit" class="btn-sair">Sair</button>
+        </form>
+    </nav>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="container">
+
+    <!-- ALERTA DE SUCESSO -->
+    <div th:if="${sucesso}" class="alerta-sucesso" th:text="${sucesso}"></div>
+
+    <!-- MENSAGEM QUANDO NÃO EXISTEM MENSAGENS -->
+    <div class="vazio" th:if="${#lists.isEmpty(mensagens)}">
+        Nenhuma mensagem enviada pelos alunos ainda.
+    </div>
+
+    <!-- CARD DE MENSAGEM -->
+    <section class="card" th:each="msg : ${mensagens}">
+
+        <!-- TOPO DO CARD -->
+        <div class="topo-card">
+            <div>
+                <h2 th:text="${msg.assunto}">Assunto da mensagem</h2>
+
+                <!-- INFORMAÇÕES DO ALUNO -->
+                <p class="info">
+                    Aluno:
+                    <strong th:text="${msg.usuario.nome}">Nome do aluno</strong>
+                    |
+                    E-mail:
+                    <strong th:text="${msg.usuario.email}">email@email.com</strong>
+                </p>
+            </div>
+
+            <!-- STATUS DA MENSAGEM -->
+            <span class="status aberta" th:if="${msg.status.name() == 'ABERTA'}">Aberta</span>
+            <span class="status respondida" th:if="${msg.status.name() == 'RESPONDIDA'}">Respondida</span>
+        </div>
+
+        <!-- CONTEÚDO DA MENSAGEM -->
+        <div class="conteudo">
+            <strong>Mensagem do aluno:</strong>
+            <p th:text="${msg.conteudo}">Texto enviado pelo aluno.</p>
+        </div>
+
+        <!-- RESPOSTA JÁ ENVIADA -->
+        <div class="resposta-antiga" th:if="${msg.resposta != null}">
+            <strong>Resposta atual:</strong>
+            <p th:text="${msg.resposta}">Resposta já enviada.</p>
+        </div>
+
+        <!-- FORMULÁRIO PARA RESPONDER -->
+        <form th:action="@{'/admin/atendimento/' + ${msg.id} + '/responder'}" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <textarea name="resposta" placeholder="Digite a resposta para o aluno..." required></textarea>
+            <button type="submit">Responder</button>
+        </form>
+    </section>
+
+</main>
+
+</body>
+</html>

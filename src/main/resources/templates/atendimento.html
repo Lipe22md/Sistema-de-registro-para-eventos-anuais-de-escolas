@@ -1,0 +1,97 @@
+<!-- DOCUMENTO HTML -->
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<!-- CABEÇALHO DO DOCUMENTO -->
+<head>
+    <link rel="stylesheet" href="/css/index5.css">
+    <link rel="icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento</title>
+
+</head>
+
+<!-- CORPO DA PÁGINA -->
+<body>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<header>
+    <h1>Atendimento ao Aluno</h1>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <a href="/">Início</a>
+        <a href="/eventos">Eventos</a>
+        <a href="/minhas-inscricoes">Minhas Inscrições</a>
+
+        <!-- FORMULÁRIO DE LOGOUT -->
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <button type="submit" class="btn-sair">Sair</button>
+        </form>
+    </nav>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="container">
+
+    <!-- ALERTA DE SUCESSO -->
+    <div th:if="${sucesso}" class="alerta-sucesso" th:text="${sucesso}"></div>
+
+    <!-- SEÇÃO PARA ENVIAR MENSAGEM -->
+    <section class="card">
+        <h2>Enviar mensagem para o suporte</h2>
+        <p>Use este formulário para tirar dúvidas sobre cadastro, inscrição ou eventos escolares.</p>
+
+        <!-- FORMULÁRIO DE ATENDIMENTO -->
+        <form th:action="@{/atendimento}" th:object="${mensagem}" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <!-- CAMPO ASSUNTO -->
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" th:field="*{assunto}" placeholder="Ex: Dúvida sobre inscrição" required>
+            <div class="erro" th:if="${#fields.hasErrors('assunto')}" th:errors="*{assunto}"></div>
+
+            <!-- CAMPO MENSAGEM -->
+            <label for="conteudo">Mensagem</label>
+            <textarea id="conteudo" th:field="*{conteudo}" placeholder="Digite sua dúvida para o suporte..." required></textarea>
+            <div class="erro" th:if="${#fields.hasErrors('conteudo')}" th:errors="*{conteudo}"></div>
+
+            <!-- BOTÃO ENVIAR MENSAGEM -->
+            <button type="submit">Enviar mensagem</button>
+        </form>
+    </section>
+
+    <!-- SEÇÃO MINHAS MENSAGENS -->
+    <section class="card">
+        <h2>Minhas mensagens</h2>
+
+        <!-- MENSAGEM QUANDO NÃO HÁ MENSAGENS -->
+        <p class="vazio" th:if="${#lists.isEmpty(mensagens)}">
+            Você ainda não enviou nenhuma mensagem.
+        </p>
+
+        <!-- MENSAGEM ENVIADA PELO ALUNO -->
+        <div class="mensagem" th:each="msg : ${mensagens}">
+
+            <!-- STATUS DA MENSAGEM -->
+            <span class="status aberta" th:if="${msg.status.name() == 'ABERTA'}">Aguardando resposta</span>
+            <span class="status respondida" th:if="${msg.status.name() == 'RESPONDIDA'}">Respondida</span>
+
+            <!-- ASSUNTO E CONTEÚDO DA MENSAGEM -->
+            <h3 th:text="${msg.assunto}">Assunto</h3>
+            <p th:text="${msg.conteudo}">Mensagem enviada pelo aluno.</p>
+
+            <!-- RESPOSTA DO SUPORTE -->
+            <div class="resposta" th:if="${msg.resposta != null}">
+                <strong>Resposta do suporte:</strong>
+                <p th:text="${msg.resposta}">Resposta do administrador.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

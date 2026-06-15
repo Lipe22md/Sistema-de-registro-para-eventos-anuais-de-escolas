@@ -1,0 +1,214 @@
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CORPO DA PÁGINA */
+body {
+    background-color: #f4f7fb;
+    color: rgb(0, 102, 255);
+}
+
+/* CABEÇALHO */
+header {
+    background-color: rgb(0, 102, 255);
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* TÍTULO DO CABEÇALHO */
+header h1 {
+    font-size: 24px;
+}
+
+/* LINKS DO MENU */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+}
+
+/* EFEITO DOS LINKS AO PASSAR O MOUSE */
+nav a:hover {
+    color: #93c5fd;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+/* ALERTA DE SUCESSO */
+.alerta-sucesso {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    border: 1px solid #86efac;
+}
+
+/* CARD PRINCIPAL */
+.card {
+    background-color: white;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    margin-bottom: 22px;
+}
+
+/* TOPO DO CARD */
+.topo-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+/* TÍTULO DO CARD */
+.topo-card h2 {
+    color: rgb(0, 102, 255);
+    font-size: 22px;
+}
+
+/* INFORMAÇÕES DO CARD */
+.info {
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+/* STATUS DA SOLICITAÇÃO */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    height: fit-content;
+}
+
+/* STATUS ABERTA */
+.aberta {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* STATUS RESPONDIDA */
+.respondida {
+    background-color: #dbeafe;
+    color: rgb(0, 102, 255);
+}
+
+/* CONTEÚDO DA MENSAGEM */
+.conteudo {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* CAMPO DE TEXTO */
+textarea {
+    width: 100%;
+    min-height: 110px;
+    resize: vertical;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+/* BOTÃO */
+button {
+    margin-top: 12px;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* EFEITO DO BOTÃO AO PASSAR O MOUSE */
+button:hover {
+    background-color: rgb(0, 102, 255);
+}
+
+/* RESPOSTA ANTIGA */
+.resposta-antiga {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #ecfdf5;
+    border-left: 4px solid #16a34a;
+    border-radius: 8px;
+}
+
+/* MENSAGEM QUANDO NÃO HÁ CONTEÚDO */
+.vazio {
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    color: #64748b;
+}
+
+/* MENU DO CABEÇALHO */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* LINKS DO MENU DO CABEÇALHO */
+header nav a {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+/* FORMULÁRIO DO MENU */
+header nav form {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* BOTÃO SAIR */
+header nav form .btn-sair {
+    all: unset;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* EFEITO DO MENU E BOTÃO SAIR AO PASSAR O MOUSE */
+header nav a:hover,
+header nav form .btn-sair:hover {
+    color: #000000;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+}

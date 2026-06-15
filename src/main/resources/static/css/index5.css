@@ -1,0 +1,246 @@
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CORPO DA PÁGINA */
+body {
+    background-color: #f4f7fb;
+    color: rgb(0, 102, 255);
+}
+
+/* CABEÇALHO */
+header {
+    background-color: rgb(0, 102, 255);
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* TÍTULO DO CABEÇALHO */
+header h1 {
+    font-size: 24px;
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* LINKS DO MENU */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* EFEITO DOS LINKS AO PASSAR O MOUSE */
+nav a:hover {
+    color: white;
+    text-shadow: none;
+    background: transparent;
+}
+
+/* FORM DO BOTÃO SAIR */
+nav form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* BOTÃO SAIR IGUAL AOS LINKS DO MENU */
+.btn-sair {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* REMOVE EFEITO BRANCO DO SAIR */
+.btn-sair:hover {
+    color: white;
+    text-shadow: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* GARANTIA PARA O MENU TODO */
+header nav a,
+header nav button,
+header nav .btn-sair {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: white !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* EFEITO DO MENU TODO AO PASSAR O MOUSE */
+header nav a:hover,
+header nav button:hover,
+header nav .btn-sair:hover {
+    color: white !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+/* CARD */
+.card {
+    background-color: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    margin-bottom: 28px;
+}
+
+/* TÍTULO DO CARD */
+.card h2 {
+    color: rgb(0, 102, 255);
+    margin-bottom: 15px;
+}
+
+/* LABEL DOS CAMPOS */
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* CAMPOS DE INPUT E TEXTAREA */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* CAMPO DE TEXTO MAIOR */
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* BOTÃO */
+button {
+    margin-top: 18px;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* EFEITO DO BOTÃO AO PASSAR O MOUSE */
+button:hover {
+    background-color: rgb(0, 102, 255);
+}
+
+/* ALERTA DE SUCESSO */
+.alerta-sucesso {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    border: 1px solid #86efac;
+}
+
+/* MENSAGEM DE ERRO */
+.erro {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* CARD DA MENSAGEM */
+.mensagem {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+    background-color: #ffffff;
+}
+
+/* TÍTULO DA MENSAGEM */
+.mensagem h3 {
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+/* STATUS DA MENSAGEM */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* STATUS ABERTA */
+.aberta {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* STATUS RESPONDIDA */
+.respondida {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* RESPOSTA DA MENSAGEM */
+.resposta {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #f1f5f9;
+    border-left: 4px solid rgb(0, 102, 255);
+    border-radius: 8px;
+}
+
+/* MENSAGEM QUANDO ESTÁ VAZIO */
+.vazio {
+    color: #64748b;
+    font-style: italic;
+}

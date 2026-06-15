@@ -1,0 +1,896 @@
+/* RESET GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONFIGURAÇÃO GERAL DA PÁGINA */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* CORPO DA PÁGINA */
+body {
+  background-color: rgb(255, 255, 255);
+  overflow-y: auto;
+}
+
+/* IMAGEM DA LOGO */
+.logo img {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+/* Efeito neon na logo ao passar o mouse */
+.logo img:hover {
+  filter: drop-shadow(5px 5px 10px #ffffff);
+}
+
+/* LINKS GERAIS */
+a {
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+/* menu cor */
+.header {
+  background: rgb(0, 102, 255);
+  padding-inline: 10px;
+}
+
+/* BARRA DE NAVEGAÇÃO */
+.nav {
+  max-width: 1280px;
+  height: 70px;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ÁREA DA LOGO */
+.logo {
+  font-size: 48px;
+}
+
+/* LISTA DO MENU */
+.nav-list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+/* LINKS DO MENU */
+.nav-list a {
+  font-size: 18px;
+  color: #fff;
+  padding-block: 16px;
+}
+
+/* Muda a cor dos links no hover */
+.nav-list a:hover {
+  color: #000000;
+  text-shadow: 0 0 5px #fefcff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  border-color: #ffffff;
+}
+
+/* BOTÃO DO MENU HAMBÚRGUER */
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  border-top: 3px solid #fff;
+  cursor: pointer;
+}
+
+/* LINHAS DO BOTÃO HAMBÚRGUER */
+.hamburger::after,
+.hamburger::before {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Estilo da seção "Sobre" */
+
+/* FUNDO DA SEÇÃO SOBRE */
+.background-color-Sobre {
+  background-color: #191919;
+  width: 100%;
+  padding: 100px 0px;
+}
+
+/* IMAGEM DA SEÇÃO SOBRE */
+.background-color-Sobre img {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+}
+
+/* TEXTO DA SEÇÃO SOBRE */
+.Text-sobre {
+  width: 550px;
+}
+
+/* CONTAINER PRINCIPAL DA SEÇÃO SOBRE */
+.main-sobre {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* TÍTULO DA SEÇÃO SOBRE */
+.Text-sobre h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 105px;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+
+/* SUBTÍTULO DA SEÇÃO SOBRE */
+.Text-sobre h5 {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 275%;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* PARÁGRAFO DA SEÇÃO SOBRE */
+.Text-sobre p {
+  color: rgb(37, 99, 235);
+  letter-spacing: 1px;
+  line-height: 1.6;
+  font-size: 1vw;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+/* BOTÃO PRINCIPAL */
+.botão {
+  margin: auto;
+  display: flex;
+  background-color: rgb(0, 102, 255);
+  color: #fff;
+  text-transform: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 13px 20px;
+  border-radius: 30px;
+  transition: 0.4s;
+}
+
+/* EFEITO DO BOTÃO AO PASSAR O MOUSE */
+.botão:hover {
+  background-color: #00ccff;
+  color: #000;
+  border: 2px solid #00ccff;
+  cursor: pointer;
+}
+
+/* Estiliza o container da seção de serviços */
+.Container-serviços {
+  background-color: #101010;
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+/* TÍTULO DA SEÇÃO DE SERVIÇOS */
+.title h2 {
+  color: #fff;
+  font-size: 6vw;
+  max-width: 90%;
+  margin: 30px auto;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* ÁREA DOS CARDS */
+.Caixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* CARD DE SERVIÇO */
+.Card {
+  background: #191919;
+  height: auto;
+  width: 90%;
+  max-width: 335px;
+  border-radius: 20px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* SUBTÍTULOS GERAIS */
+h5 {
+  color: #fff;
+  font-size: 4vw;
+  margin-bottom: 15px;
+}
+
+/* PARÁGRAFO DOS CARDS */
+.Paragrafo-button p {
+  color: rgb(37, 99, 235);
+  font-size: 3vw;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* BOTÃO DOS CARDS */
+.Paragrafo-button button {
+  margin-top: 25px;
+  padding: 10px 20px;
+  font-size: 3vw;
+}
+
+/* Estiliza o container de contato */
+.me-contate {
+  width: 100%;
+  height: 290px;
+  background-color: #191919;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TEXTO DA ÁREA DE CONTATO */
+.me-contate p {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* Estiliza o footer */
+footer {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  background-color: #101010;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TEXTO DO RODAPÉ */
+footer p {
+  color: #fff;
+  font-size: 15px;
+  width: 500px;
+  text-align: center;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  line-height: 23px;
+}
+
+/* ÁREA DAS REDES SOCIAIS */
+.Redes-sociais {
+  display: flex;
+}
+
+/* LINKS DAS REDES SOCIAIS */
+.Redes-sociais a {
+  background-color: rgb(0, 102, 255);
+  width: 45px;
+  height: 45px;
+  padding: 15px;
+  border-radius: 50%;
+  margin: 22px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* EFEITO DAS REDES SOCIAIS AO PASSAR O MOUSE */
+.Redes-sociais a:hover {
+  transform: scale(1.2);
+  transition: .3s;
+}
+
+/* TEXTO FINAL DO RODAPÉ */
+.end {
+  position: absolute;
+  color: rgb(0, 102, 255);
+  bottom: 35px;
+  font-size: 14px;
+}
+
+/* ÍCONES SVG DAS REDES SOCIAIS */
+.Redes-sociais svg {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  transition-delay: 2s;
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+#topo {
+  background-color: rgb(0, 102, 255);
+  width: 45px;
+  height: 45px;
+  padding: 15px;
+  border-radius: 50%;
+  margin: 22px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  box-shadow: #3a2f2f;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 999;
+}
+
+/* Slider original mantido */
+
+/* SEÇÃO DO SLIDER */
+section.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* CONTEÚDO DO SLIDER */
+.slider-content {
+  width: 400%;
+  height: auto;
+  display: flex;
+}
+
+/* INPUTS DO SLIDER E IMAGEM MOBILE */
+.slider-content input,
+.img-mobile {
+  display: none;
+}
+
+/* CAIXA DE CADA SLIDE */
+.slide-box {
+  width: 25%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  transition: 1s;
+  z-index: 1;
+}
+
+/* IMAGEM DO SLIDE */
+.slide-box img {
+  width: 100%;
+}
+
+/* NAVEGAÇÃO MANUAL E AUTOMÁTICA DO SLIDER */
+.nav-manual,
+.nav-auto {
+  position: absolute;
+  width: 100%;
+  margin-top: 35%;
+  display: flex;
+  justify-content: center;
+}
+
+/* BOTÕES DE NAVEGAÇÃO DO SLIDER */
+.nav-manual .manual-btn,
+.nav-auto div {
+  border: 1px solid rgb(0, 102, 255);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* ESPAÇAMENTO ENTRE OS BOTÕES DO SLIDER */
+.nav-manual .manual-btn:not(:last-child),
+.nav-auto div:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* EFEITO DO BOTÃO MANUAL DO SLIDER */
+.nav-manual .manual-btn:hover {
+  background-color: rgb(0, 102, 255);
+}
+
+/* BOTÃO AUTOMÁTICO ATIVO DO SLIDER */
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3 {
+  background-color: rgb(0, 102, 255);
+}
+
+/* PRIMEIRO SLIDE ATIVO */
+#radio1:checked ~ .primeiro {
+  margin-left: 0%;
+}
+
+/* SEGUNDO SLIDE ATIVO */
+#radio2:checked ~ .primeiro {
+  margin-left: -25%;
+}
+
+/* TERCEIRO SLIDE ATIVO */
+#radio3:checked ~ .primeiro {
+  margin-left: -50%;
+}
+
+/* eventos imagens */
+
+/* SEÇÃO DE EVENTOS VISUAIS */
+.eventos-visuais {
+  padding: 60px 8%;
+  background-color: #f8fafc;
+}
+
+/* TÍTULO DA SEÇÃO DE EVENTOS */
+.eventos-titulo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+/* TEXTO PRINCIPAL DO TÍTULO DE EVENTOS */
+.eventos-titulo h2 {
+  font-size: 32px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+/* SUBTÍTULO DA SEÇÃO DE EVENTOS */
+.eventos-titulo p {
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* LISTA DE EVENTOS */
+.eventos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+/* CARD DE EVENTO */
+.evento-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+  cursor: default;
+}
+
+/* EFEITO DO CARD DE EVENTO AO PASSAR O MOUSE */
+.evento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+}
+
+/* IMAGEM DO CARD DE EVENTO */
+.evento-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TÍTULO DO CARD DE EVENTO */
+.evento-card h3 {
+  padding: 16px;
+  font-size: 18px;
+  color: rgb(37, 99, 235);
+  text-align: center;
+}
+
+/* ================================
+   RESPONSIVIDADE SEM QUEBRAR O SITE
+================================ */
+
+/* telas médias, tipo janela dividida no PC */
+@media screen and (max-width: 1100px) {
+  /* AJUSTE DA NAVEGAÇÃO EM TELAS MÉDIAS */
+  .nav {
+    padding: 0 15px;
+  }
+
+  /* AJUSTE DA LISTA DO MENU EM TELAS MÉDIAS */
+  .nav-list {
+    gap: 22px;
+  }
+
+  /* AJUSTE DOS LINKS DO MENU EM TELAS MÉDIAS */
+  .nav-list a {
+    font-size: 16px;
+  }
+
+  /* AJUSTE DO TÍTULO SOBRE EM TELAS MÉDIAS */
+  .Text-sobre h2 {
+    font-size: 75px;
+  }
+
+  /* AJUSTE DO SUBTÍTULO SOBRE EM TELAS MÉDIAS */
+  .Text-sobre h5 {
+    font-size: 38px;
+  }
+
+  /* AJUSTE DO PARÁGRAFO SOBRE EM TELAS MÉDIAS */
+  .Text-sobre p {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+}
+
+/* mantém o slider normal em tablet e janela dividida */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  /* IMAGEM DESKTOP EM TABLET */
+  .img-desktop {
+    display: block;
+  }
+
+  /* IMAGEM MOBILE EM TABLET */
+  .img-mobile {
+    display: none;
+  }
+
+  /* NAVEGAÇÃO DO SLIDER EM TABLET */
+  .nav-auto,
+  .nav-manual {
+    margin-top: 35%;
+  }
+
+  /* EVENTOS EM TABLET */
+  .eventos-visuais {
+    padding: 45px 5%;
+  }
+
+  /* LISTA DE EVENTOS EM TABLET */
+  .eventos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile real */
+@media screen and (max-width: 750px) {
+  /* CABEÇALHO EM TELAS MENORES */
+  .header {
+    padding-inline: 18px;
+  }
+
+  /* LOGO EM TELAS MENORES */
+  .logo img {
+    width: 80px;
+  }
+
+  /* BOTÃO HAMBÚRGUER EM TELAS MENORES */
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+
+  /* MENU EM TELAS MENORES */
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 102, 255);
+    clip-path: circle(100px at 90% -15%);
+    transition: 1s ease-out;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* LINKS DO MENU EM TELAS MENORES */
+  .nav-list a {
+    font-size: 24px;
+    opacity: 0;
+    color: white;
+  }
+
+  /* ANIMAÇÃO DO PRIMEIRO ITEM DO MENU */
+  .nav-list li:nth-child(1) a {
+    transition: 0.5s 0.2s;
+  }
+
+  /* ANIMAÇÃO DO SEGUNDO ITEM DO MENU */
+  .nav-list li:nth-child(2) a {
+    transition: 0.5s 0.4s;
+  }
+
+  /* ANIMAÇÃO DO TERCEIRO ITEM DO MENU */
+  .nav-list li:nth-child(3) a {
+    transition: 0.5s 0.6s;
+  }
+
+  /* ANIMAÇÃO DO QUARTO ITEM DO MENU */
+  .nav-list li:nth-child(4) a {
+    transition: 0.5s 0.8s;
+  }
+
+  /* ANIMAÇÃO DO QUINTO ITEM DO MENU */
+  .nav-list li:nth-child(5) a {
+    transition: 0.5s 1s;
+  }
+
+  /* MENU ATIVO EM TELAS MENORES */
+  .nav.active .nav-list {
+    clip-path: circle(1500px at 90% -15%);
+    pointer-events: all;
+  }
+
+  /* LINKS VISÍVEIS COM MENU ATIVO */
+  .nav.active .nav-list a {
+    opacity: 1;
+  }
+
+  /* HAMBÚRGUER ATIVO EM FORMATO DE X */
+  .nav.active .hamburger {
+    position: fixed;
+    top: 26px;
+    right: 16px;
+    border-top-color: transparent;
+    z-index: 1001;
+  }
+
+  /* PRIMEIRA LINHA DO X */
+  .nav.active .hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  /* SEGUNDA LINHA DO X */
+  .nav.active .hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  /* SEÇÃO SOBRE EM TELAS MENORES */
+  .main-sobre {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+  }
+
+  /* TEXTO SOBRE EM TELAS MENORES */
+  .Text-sobre {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* TÍTULO SOBRE EM TELAS MENORES */
+  .Text-sobre h2 {
+    font-size: 45px;
+  }
+
+  /* SUBTÍTULO SOBRE EM TELAS MENORES */
+  .Text-sobre h5 {
+    font-size: 28px;
+  }
+
+  /* PARÁGRAFO SOBRE EM TELAS MENORES */
+  .Text-sobre p {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  /* FUNDO SOBRE EM TELAS MENORES */
+  .background-color-Sobre {
+    padding: 70px 0;
+  }
+
+  /* IMAGEM SOBRE EM TELAS MENORES */
+  .background-color-Sobre img {
+    max-width: 330px;
+  }
+
+  /* EVENTOS EM TELAS MENORES */
+  .eventos-visuais {
+    padding: 40px 20px;
+  }
+
+  /* LISTA DE EVENTOS EM TELAS MENORES */
+  .eventos-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* IMAGEM DO CARD DE EVENTO EM TELAS MENORES */
+  .evento-card img {
+    height: 190px;
+    object-fit: cover;
+  }
+
+  /* RODAPÉ EM TELAS MENORES */
+  footer {
+    position: relative;
+    height: auto;
+    min-height: 400px;
+    padding: 45px 20px 70px;
+  }
+
+  /* TEXTO DO RODAPÉ EM TELAS MENORES */
+  footer p {
+    width: 90%;
+  }
+
+  /* REDES SOCIAIS EM TELAS MENORES */
+  .Redes-sociais {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* LINKS DAS REDES SOCIAIS EM TELAS MENORES */
+  .Redes-sociais a {
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+    margin: 8px;
+  }
+
+  /* ÍCONES DAS REDES SOCIAIS EM TELAS MENORES */
+  .Redes-sociais svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* TEXTO FINAL DO RODAPÉ EM TELAS MENORES */
+  .end {
+    position: relative;
+    bottom: auto;
+    margin-top: 20px;
+  }
+}
+
+/* celular */
+@media screen and (max-width: 600px) {
+  /* IMAGEM DESKTOP NO CELULAR */
+  .img-desktop {
+    display: none;
+  }
+
+  /* IMAGEM MOBILE NO CELULAR */
+  .img-mobile {
+    display: block;
+  }
+
+  /* NAVEGAÇÃO DO SLIDER NO CELULAR */
+  .nav-auto,
+  .nav-manual {
+    margin-top: 60%;
+  }
+
+  /* TÍTULO DOS EVENTOS NO CELULAR */
+  .eventos-titulo h2 {
+    font-size: 28px;
+  }
+
+  /* SUBTÍTULO DOS EVENTOS NO CELULAR */
+  .eventos-titulo p {
+    font-size: 14px;
+  }
+
+  /* IMAGEM DO CARD DE EVENTO NO CELULAR */
+  .evento-card img {
+    height: 170px;
+  }
+
+  /* TÍTULO SOBRE NO CELULAR */
+  .Text-sobre h2 {
+    font-size: 40px;
+  }
+
+  /* SUBTÍTULO SOBRE NO CELULAR */
+  .Text-sobre h5 {
+    font-size: 24px;
+  }
+
+  /* PARÁGRAFO SOBRE NO CELULAR */
+  .Text-sobre p {
+    font-size: 15px;
+  }
+
+  /* CONTATO NO CELULAR */
+  .me-contate {
+    height: auto;
+    min-height: 220px;
+    padding: 30px 20px;
+  }
+
+  /* TEXTO DO CONTATO NO CELULAR */
+  .me-contate p {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  /* BOTÃO VOLTAR AO TOPO NO CELULAR */
+  #topo {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  /* ÍCONE DO BOTÃO VOLTAR AO TOPO NO CELULAR */
+  #topo svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* celular pequeno */
+@media screen and (max-width: 480px) {
+  /* LOGO EM CELULAR PEQUENO */
+  .logo img {
+    width: 70px;
+  }
+
+  /* LINKS DO MENU EM CELULAR PEQUENO */
+  .nav-list a {
+    font-size: 22px;
+  }
+
+  /* IMAGEM DO SLIDE EM CELULAR PEQUENO */
+  .slide-box img {
+    min-height: 210px;
+    object-fit: cover;
+  }
+
+  /* IMAGEM DO CARD DE EVENTO EM CELULAR PEQUENO */
+  .evento-card img {
+    height: 155px;
+  }
+
+  /* BOTÃO EM CELULAR PEQUENO */
+  .botão {
+    padding: 11px 18px;
+    font-size: 15px;
+  }
+
+  /* TEXTO DO RODAPÉ EM CELULAR PEQUENO */
+  footer p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  /* TEXTO FINAL EM CELULAR PEQUENO */
+  .end {
+    font-size: 12px;
+  }
+}
